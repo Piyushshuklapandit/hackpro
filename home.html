@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <title>AXO AI - Home Page</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="/axologo.png" type="image/png">
+    <link rel="preload" href="/axologo.png" as="image">
+    <link rel="preload" href="hero.png" as="image">
+</head>
+<body class="dark-mode">
+    <header class="glass-header">
+        <div class="logo">
+            <img src="/axologo.png" alt="AXO AI Logo" loading="lazy">
+        </div>
+        <div class="header-text">
+            AXO AI
+        </div>
+        <div class="navbar-right">
+            <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            <button class="theme-toggle"><i class="fas fa-moon"></i></button>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="hero-overlay"></div>
+        <img src="hero.png" alt="Hero Logo" class="hero-logo parallax" loading="lazy">
+        <div class="hero-content glass-overlay parallax">
+            <h1 class="float">Welcome to Your Dashboard</h1>
+            <p class="float">Explore the power of AI with AXO AI!</p>
+        </div>
+    </div>
+
+    <div class="search-bar">
+        <input type="text" placeholder="ENTER THE CODE" class="search-input">
+        <button class="mic-btn"><i class="fas fa-microphone"></i></button>
+        <button class="search-button ripple">Search</button>
+    </div>
+
+    <footer class="wave-footer">
+        <div class="wave"></div>
+        <p>© <span id="year">2025</span> AXO AI. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#" class="social-icon float"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon float"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-icon float"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Confetti for success animation -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="home.js"></script>
+    <!-- Service Worker for PWA -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js');
+        }
+    </script>
+</body>
+</html>
